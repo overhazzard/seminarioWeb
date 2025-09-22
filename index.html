@@ -1,111 +1,115 @@
-<!doctype html>
+  <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PHA Edutech — Seminarios y Cursos</title>
+  <title>P.H.A EduTech | Seminarios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --celeste: #7dd3fc; /* light cyan */
-      --azul:   #0b59b5; /* deep blue */
-      --blanco: #ffffff;
-      --gris-100: #f3f4f6;
-      --texto: #0f172a;
-      --card-shadow: 0 6px 18px rgba(11,89,181,0.08);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:var(--texto);background:linear-gradient(180deg,var(--blanco) 0%,var(--gris-100) 100%)}
+  <link rel="icon" type="image/png" href="/img/Logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
-    /* HEADER */
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:var(--blanco);border-bottom:1px solid #e6edf6;position:sticky;top:0;z-index:40}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--celeste),var(--azul));display:flex;align-items:center;justify-content:center;color:var(--blanco);font-weight:700}
-    nav{display:flex;gap:18px;align-items:center}
-    nav a{color:var(--texto);text-decoration:none;font-weight:500}
-    .cta{background:linear-gradient(90deg,var(--azul),#1066d6);color:var(--blanco);padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;box-shadow:var(--card-shadow)}
-
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;padding:48px 24px;align-items:center}
-    .hero .copy h1{font-size:32px;margin:0 0 12px}
-    .hero .copy p{margin:0 0 20px;color:#334155}
-    .hero .actions{display:flex;gap:12px}
-    .btn-outline{padding:10px 14px;border-radius:10px;border:2px solid var(--azul);background:transparent;color:var(--azul);font-weight:600;text-decoration:none}
-    .hero-card{background:var(--blanco);padding:20px;border-radius:12px;box-shadow:var(--card-shadow)}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--celeste);font-weight:600;margin-bottom:12px}
-
-    /* GRID for sections */
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    .grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
-    .card{background:var(--blanco);padding:18px;border-radius:12px;box-shadow:var(--card-shadow);border:1px solid rgba(11,89,181,0.04)}
-    .card h3{margin:6px 0 8px}
-    .meta{font-size:13px;color:#64748b;margin-bottom:10px}
-    .card .buy{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:8px;background:linear-gradient(90deg,var(--azul),#1066d6);color:var(--blanco);text-decoration:none;font-weight:600}
-
-    /* BENEFICIOS */
-    .benefits{display:flex;flex-wrap:wrap;gap:12px;padding:20px;background:linear-gradient(180deg,rgba(125,211,252,0.12),rgba(11,89,181,0.04));border-radius:12px}
-    .benefit{flex:1;min-width:160px;padding:12px}
-
-    /* TESTIMONIOS */
-    .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .testimonial{background:var(--blanco);padding:16px;border-radius:10px;box-shadow:var(--card-shadow)}
-
-    /* BLOG */
-    .blog-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-
-    /* CTA final */
-    .cta-final{display:flex;align-items:center;justify-content:space-between;padding:24px;border-radius:12px;background:linear-gradient(90deg,var(--azul),#2b6cb0);color:var(--blanco);margin-top:18px}
-    .cta-final .btn{background:var(--blanco);color:var(--azul);padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
-
-    /* FOOTER */
-    footer{padding:28px 24px;color:#475569}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;gap:18px}
-      .testimonials{grid-template-columns:1fr}
-      nav{display:none}
-    }
-
-    /* Simple modal */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.5);display:none;align-items:center;justify-content:center;padding:20px}
-    .modal{background:var(--blanco);padding:18px;border-radius:12px;max-width:520px;width:100%}
-    .close{background:transparent;border:0;font-size:18px;float:right}
-    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf6;margin-top:8px}
-    label{font-weight:600;font-size:13px}
-  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <div class="mark">PHA</div>
-      <div>
-        <div style="font-weight:700">PHA Edutech</div>
-        <div style="font-size:12px;color:#64748b">Seminarios prácticos para empezar en tech</div>
-      </div>
-    </div>
+<!----------------------------------------------------- NAVBAR SECTION ---------------------------------------------------------->
+  <nav class="bg-white border-gray-200 dark:bg-gray-900">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+  <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/img/Logo.png" style="width: 50px; height: 50px;" class="h-8" alt="Flowbite Logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white orbitron-text" style="color: white;">P.H.A EduTech <i class="fa-solid fa-globe"></i></span>
+  </a>
+  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <button type="button" class="btn-inscripcion orbitron-text text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="#inscribirme" id="openModal"><i class="fa-solid fa-user-plus"></i> Inscríbete Ahora!</button>
+      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" style="color: white;" aria-controls="navbar-cta" aria-expanded="false">
+        <span class="sr-only">Abrir MENU principal</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+  </div>
+  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+    <ul class="list-nav flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <li>
+        <a href="#" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page" style="color: white;"><i class="fa-solid fa-house"></i> Inicio</a>
+      </li>
+      <li>
+        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="color: white;"><i class="fa-solid fa-book-skull"></i> Seminarios</a>
+      </li>
+      <li>
+        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="color: white;"><i class="fa-solid fa-blog"></i> Blog</a>
+      </li>
+      <li>
+        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" style="color: white;"><i class="fa-solid fa-address-card"></i> Contacto</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+  </nav>
+<!----------------------------------------------------- NAVBAR END SECTION ---------------------------------------------------------->
 
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#seminarios">Seminarios</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#blog">Blog</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
 
-    <div style="display:flex;gap:12px;align-items:center">
-      <a class="cta" href="#inscribirme" id="openModal">📌 Inscríbete Ahora</a>
+<!----------------------------------------------------- CARRUSEL SECTION ---------------------------------------------------------->
+  <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://miro.medium.com/0*gtY-llyEbkeoS1Sp.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://miro.medium.com/0*gtY-llyEbkeoS1Sp.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://miro.medium.com/0*gtY-llyEbkeoS1Sp.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://miro.medium.com/0*gtY-llyEbkeoS1Sp.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://miro.medium.com/0*gtY-llyEbkeoS1Sp.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
     </div>
-  </header>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+  </div>
+<!----------------------------------------------------- CARRUSEL END SECTION ---------------------------------------------------------->
+
 
   <main>
     <section class="hero container" id="inicio">
       <div class="copy">
-        <span class="badge">Seminarios este mes</span>
-        <h1>Aprende programación con seminarios prácticos y accesibles</h1>
-        <p>Seminarios cortos, con ejercicios en vivo y material de apoyo. Ideal para estudiantes, principiantes y curiosos que quieren empezar en tecnología.</p>
+        <span class="badge"><i class="fa-solid fa-calendar-week"></i> Seminarios todas las SEMANAS</span>
+        <h1 class="orbitron-text">APRENDE <b style="color: #0edaea;">PROGRAMACIÓN</b> DESDE 0 CON SEMINARIOS <b style="color: #ff8c42;">PRÁCTICOS</b> Y <b style="color: #ff8c42;">ACCESIBLES</b> <i class="fa-solid fa-code"></i></h1>
+        <p>Seminarios cortos, con clases en vivo y material de apoyo. Ideal para estudiantes, principiantes y curiosos que quieren empezar en su carrera en el mundo tecnológico.</p>
         <div class="actions">
           <a class="cta" href="#seminarios">Ver seminarios</a>
           <a class="btn-outline" href="#inscribirme" id="openModal2">Inscribirme</a>
@@ -113,99 +117,289 @@
       </div>
 
       <aside class="hero-card">
-        <h3>Próximo seminario</h3>
-        <div style="font-size:14px;color:#334155;margin-top:6px">Python para principiantes</div>
-        <div class="meta">Domingo, [fecha] · 3 horas · Modalidad: En línea</div>
-        <div style="display:flex;gap:8px;margin-top:12px">
-          <a class="buy" href="#inscribirme" id="openModal3">Inscribirme</a>
-          <a class="btn-outline" href="#">Más info</a>
+        <div class="flex items-center p-4 mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800" role="alert">
+  <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+  </svg>
+  <span class="sr-only">Info</span>
+  <div>
+    <span class="font-medium">Comienza tu carrera en el mundo de la ciberseguridad.</span>
+  </div>
+</div>
+        <div style="display:flex;align-items: center;justify-content:space-between;gap:12px;">
+            <div>
+                <div class="orbitron-text" style="font-size:20px;margin-top:6px;font-weight: bolder;">Introducción al Ethical Hacking</div><br>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><i class="fa-solid fa-circle-check"></i> Fecha: Todos los DOMINGOS. <br> <i class="fa-solid fa-circle-check"></i> Costo: S/25.00 <br><i class="fa-solid fa-circle-check"></i> Tipo: Teórico</p>                
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Inscribirse
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+                </a>
+            </div>    
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Logo Python" style="height: auto;">
         </div>
       </aside>
     </section>
 
     <section class="container" id="seminarios">
-      <h2>Seminarios disponibles</h2>
+      <h1 class="orbitron-text">SEMINARIOS DISPONIBLES</h1>
+     <!-- <div class="timeline">
+        <ol class="items-center w-full space-y-4 sm:flex sm:space-x-8 sm:space-y-0 rtl:space-x-reverse">
+          <li class="flex items-center text-blue-600 dark:text-blue-500 space-x-2.5 rtl:space-x-reverse">
+            <span class="flex items-center justify-center w-8 h-8 border border-blue-600 rounded-full shrink-0 dark:border-blue-500">1</span>
+            <span>
+              <h3 class="font-medium leading-tight">User info</h3>
+              <p class="text-sm">Step details here</p>
+            </span>
+          </li>
+          <li class="flex items-center text-gray-500 dark:text-gray-400 space-x-2.5 rtl:space-x-reverse">
+            <span class="flex items-center justify-center w-8 h-8 border border-gray-500 rounded-full shrink-0 dark:border-gray-400">2</span>
+            <span>
+              <h3 class="font-medium leading-tight">Company info</h3>
+              <p class="text-sm">Step details here</p>
+            </span>
+          </li>
+          <li class="flex items-center text-gray-500 dark:text-gray-400 space-x-2.5 rtl:space-x-reverse">
+            <span class="flex items-center justify-center w-8 h-8 border border-gray-500 rounded-full shrink-0 dark:border-gray-400">3</span>
+            <span>
+              <h3 class="font-medium leading-tight">Payment info</h3>
+              <p class="text-sm">Step details here</p>
+            </span>
+          </li>
+        </ol>
+      </div> --> 
+
       <div class="grid-cards">
         <article class="card">
-          <h3>Python — Nivel inicial</h3>
-          <div class="meta">Domingo · 3 horas · En línea</div>
+          <h3 class="orbitron-text">Introducción a Python</h3>
+          <div class="meta">Cuando: Todos los JUEVES <br>Duración: 2horas 30min aprox. <br>Costo Inscripción: S/. 25.00 <br>Plataforma: MS Teams</div>
           <p>Aprende variables, control de flujo, funciones y práctica en vivo.</p>
           <a class="buy" href="#inscribirme" id="cardPython">Inscribirme</a>
         </article>
 
         <article class="card">
-          <h3>Desarrollo Web — HTML/CSS/JS</h3>
-          <div class="meta">Sábado · 4 horas · Híbrido</div>
+          <h3 class="orbitron-text">Introducción al Desarrollo Web</h3>
+          <div class="meta">Cuando: Todos los MARTES <br>Duración: 2horas 30min aprox. <br>Costo Inscripción: S/. 25.00  <br>Plataforma: MS Teams</div>
           <p>Construye tu primera página web y entiende cómo funciona el front-end.</p>
           <a class="buy" href="#inscribirme">Inscribirme</a>
         </article>
 
         <article class="card">
-          <h3>Java — Fundamentos</h3>
-          <div class="meta">Domingo · 3 horas · En línea</div>
-          <p>Introducción a POO en Java: clases, objetos, herencia y más.</p>
+          <h3 class="orbitron-text">Introducción a Java</h3>
+          <div class="meta">Cuando: Todos los DOMINGOS <br>Duración: 2horas 30min aprox. <br>Costo Inscripción: S/. 25.00  <br>Plataforma: MS Teams</div>
+          <p>Introducción a Java: datos primitivos, condicionales, bucles, POO y más.</p>
           <a class="buy" href="#inscribirme">Inscribirme</a>
         </article>
 
         <article class="card">
-          <h3>Introducción a Ingeniería de Sistemas</h3>
-          <div class="meta">Viernes · 2 horas · En línea</div>
+          <h3 class="orbitron-text">Introducción al Ethical Hacking</h3>
+          <div class="meta">Cuando: Todos los DOMINGOS <br>Duración: 1hora 30min aprox. <br>Costo Inscripción: S/. 10.00  <br>Plataforma: MS Teams</div>
           <p>Conoce las áreas, roles y cómo iniciarte en la carrera.</p>
           <a class="buy" href="#inscribirme">Inscribirme</a>
         </article>
       </div>
 
       <div style="margin-top:18px" class="benefits">
-        <div class="benefit">✅ Clases 100% prácticas</div>
-        <div class="benefit">✅ Certificado digital</div>
-        <div class="benefit">✅ Material descargable</div>
-        <div class="benefit">✅ Comunidad en Discord/Telegram</div>
+        <div class="benefit">✅ Clases en Vivo</div>
+        <div class="benefit">✅ Comunidad en Discord</div>
+        <div class="benefit">✅ 7 Cupos por Seminario</div>
+        <div class="benefit">✅ Resolución de Dudas</div>
       </div>
     </section>
 
-    <section class="container" id="sobre" style="margin-top:18px">
-      <h2>Sobre PHA Edutech</h2>
-      <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
-        <div style="flex:1;min-width:260px">
-          <p>PHA Edutech nace para acercar la tecnología a estudiantes y profesionales que quieren empezar en el mundo de la programación de forma práctica y rápida. Nuestros seminarios están diseñados para que aprendas haciendo.</p>
-        </div>
-        <div style="flex:1;min-width:260px">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220'><rect width='100%' height='100%' fill='%23f8fafc' rx='12'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Inter' font-size='18' fill='%2364748b'>Imagen / Ilustración</text></svg>" alt="illustration" style="width:100%;border-radius:10px;"/>
-        </div>
-      </div>
-    </section>
+    
 
-    <section class="container" id="testimonios" style="margin-top:18px">
-      <h2>Testimonios</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          <strong>Ana P.</strong>
-          <div style="color:#475569;margin-top:8px">"El seminario de Python me ayudó a entender los conceptos básicos y a crear mi primer proyecto. Muy práctico y dinámico."</div>
-        </div>
-        <div class="testimonial">
-          <strong>Luis M.</strong>
-          <div style="color:#475569;margin-top:8px">"Excelente formato, el profesor explicó con ejemplos reales y el material fue muy útil."</div>
-        </div>
-      </div>
-    </section>
 
-    <section class="container" id="blog" style="margin-top:18px">
-      <h2>Blog / Recursos</h2>
-      <div class="blog-list">
-        <article class="card">
-          <h3>¿Qué lenguaje aprender primero?</h3>
-          <p style="color:#475569">Guía rápida para elegir entre Python, Java y JavaScript según tus objetivos.</p>
-        </article>
-        <article class="card">
-          <h3>5 tips para tu primer proyecto</h3>
-          <p style="color:#475569">Consejos prácticos para planear y completar tu primer proyecto de programación.</p>
-        </article>
-        <article class="card">
-          <h3>Cómo organizar tu tiempo de estudio</h3>
-          <p style="color:#475569">Estrategias y herramientas para estudiar programación sin quemarte.</p>
-        </article>
-      </div>
-    </section>
+<div class="w-100 bg-white border border-gray-300 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div class="sm:hidden">
+        <label for="tabs" class="sr-only">Select tab</label>
+        <select id="tabs" class="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-sm rounded-t-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option>Statistics</option>
+            <option>Services</option>
+            <option>FAQ</option>
+        </select>
+    </div>
+    <ul class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg sm:flex dark:divide-gray-600 dark:text-gray-400 rtl:divide-x-reverse" id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
+        <li class="w-full">
+            <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-ss-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Statistics</button>
+        </li>
+        <li class="w-full">
+            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Services</button>
+        </li>
+        <li class="w-full">
+            <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-se-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">FAQ</button>
+        </li>
+    </ul>
+    <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
+        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+            <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">73M+</dt>
+                    <dd class="text-gray-500 dark:text-gray-400">Developers</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">100M+</dt>
+                    <dd class="text-gray-500 dark:text-gray-400">Public repositories</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">1000s</dt>
+                    <dd class="text-gray-500 dark:text-gray-400">Open source projects</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">1B+</dt>
+                    <dd class="text-gray-500 dark:text-gray-400">Contributors</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">90+</dt>
+                    <dd class="text-gray-500 dark:text-gray-400">Top Forbes companies</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">4M+</dt>
+                    <dd class="text-gray-500 dark:text-gray-400">Organizations</dd>
+                </div>
+            </dl>
+        </div>
+        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
+            <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2>
+            <!-- List -->
+            <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
+                <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                    </svg>
+                    <span class="leading-tight">Dynamic reports and dashboards</span>
+                </li>
+                <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                    </svg>
+                    <span class="leading-tight">Templates for everyone</span>
+                </li>
+                <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                    </svg>
+                    <span class="leading-tight">Development workflow</span>
+                </li>
+                <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                    </svg>
+                    <span class="leading-tight">Limitless business automation</span>
+                </li>
+            </ul>
+        </div>
+        <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="faq" role="tabpanel" aria-labelledby="faq-tab">
+            <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                <h2 id="accordion-flush-heading-1">
+                    <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                    <span>What is Flowbite?</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-flush-heading-2">
+                    <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                    <span>Is there a Figma file available?</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-flush-heading-3">
+                    <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                    <span>What are the differences between Flowbite and Tailwind UI?</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+                    <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                        <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+                        <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+        <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+            <a href="#" class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
+                <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
+                    <path d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z"/>
+                </svg>
+                Tutorial
+            </a>
+            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">How to quickly deploy a static website</h1>
+            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.</p>
+            <a href="#" class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                Read more
+                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </a>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+                <a href="#" class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
+                    <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                        <path d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z"/>
+                    </svg>
+                    Design
+                </a>
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Start with Flowbite Design System</h2>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.</p>
+                <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read more
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+                </a>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+                <a href="#" class="bg-purple-100 text-purple-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-purple-400 mb-2">
+                    <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"/>
+                    </svg>
+                    Code
+                </a>
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Best react libraries around the web</h2>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.</p>
+                <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read more
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <section class="container" style="margin-top:18px">
       <div class="cta-final">
@@ -221,21 +415,43 @@
 
   </main>
   
-  <footer class="container">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-      <div>
-        <strong>PHA Edutech</strong>
-        <div style="font-size:13px;color:#64748b">Seminarios prácticos para empezar en tech</div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a href="#">TikTok</a>
-        <a href="#">YouTube</a>
-        <a href="#">Instagram</a>
-        <a href="#">Discord</a>
-      </div>
+  
+
+
+
+
+
+<footer class="footer bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="/img/Logo.png" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">P.H.A EduTech</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6"><i class="fa-solid fa-circle-question"></i> Acerca de</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6"><i class="fa-solid fa-folder-plus"></i> Inscripción</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline"><i class="fa-solid fa-address-card"></i> Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://flowbite.com/" class="hover:underline">PHA EduTech™</a>. Todos los Derechos Reservados.</span>
     </div>
-    <div style="margin-top:14px;color:#94a3b8;font-size:13px">© 2025 PHA Edutech. Todos los derechos reservados.</div>
-  </footer>
+</footer>
+
+
+
+
+
 
   <!-- MODAL INSCRIPCIÓN -->
   <div class="modal-backdrop" id="modal">
@@ -269,6 +485,8 @@
       </form>
     </div>
   </div>
+  <script src="https://kit.fontawesome.com/b0d81bfe61.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
   <script>
     // Modal logic
