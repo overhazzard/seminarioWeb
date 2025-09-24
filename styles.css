@@ -14,6 +14,16 @@
         font-style: normal;
     }
 
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-8px);}
+        100% { transform: translateY(0); }
+    }
+
+    .btn-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
     :root {
       --celeste: #7dd3fc; /* light cyan */
       --azul:   #0b59b5; /* deep blue */
@@ -33,9 +43,7 @@
     html,body {
         height:100%;
         margin:0;
-        font-family: 'Inter',sans-serif;
         color:var(--texto);
-        background:linear-gradient(180deg,var(--blanco) 0%,var(--gris-100) 100%)
     }
 
     .logo {
@@ -290,7 +298,18 @@
 
     nav {
         background-color: var(--color-primario);
-        background-image: url(/img/fondo.jpg);
+        box-shadow: 0 4px 5px 0 black;
+        position: relative;
+        z-index: 10;
+    }
+
+    
+
+    .nav-link.active, .nav-link[aria-current="page"] {
+        color: var(--color-secundario) !important;
+        font-weight: bold;
+        border-bottom: 3px solid var(--color-secundario);
+        background: rgba(13,218,234,0.08);
     }
     
     .list-nav {
@@ -321,3 +340,12 @@
         align-items: center;
         height: 100px;
     }
+
+    /* Centrar contenido de la sección pasos */
+.container-pasos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
